@@ -62,14 +62,15 @@ public class UserController {
     @RequestMapping("/queryUserInfo/{userId}")
     public UserInfoVo queryUserInfo(@PathVariable("userId") Integer userId) {
         log.info("进入queryUserInfo..............");
-        User user = userServiceImpl.queryUserById(userId);
+        //User user = userServiceImpl.queryUserById(userId);
 
         ResponseEntity<List> responseEntity  =  restTemplate.getForEntity("http://MS-PROVIDER-ORDER/order/queryOrdersByUserId/"+userId, List.class);
         List<OrderVo> orderVoList = responseEntity.getBody();
 
         UserInfoVo userInfoVo = new UserInfoVo();
         userInfoVo.setOrderVoList(orderVoList);
-        userInfoVo.setUserName(user.getUserName());
+        userInfoVo.setUserName("张三");
+
 
         return userInfoVo;
     }
