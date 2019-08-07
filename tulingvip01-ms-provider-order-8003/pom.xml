@@ -8,7 +8,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>com.tuling</groupId>
-	<artifactId>tulingvip01-ms-provider-order-8002</artifactId>
+	<artifactId>tulingvip01-ms-provider-order-8003</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>tulingvip01-ms-provider-order-8003</name>
 	<description>Demo project for Spring Boot</description>
