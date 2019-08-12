@@ -79,7 +79,7 @@ public class UserController {
         log.info("触发降级方法=根据用户ID{}查询订单服务异常:{}",userId);
         UserInfoVo userInfoVo = new UserInfoVo();
         userInfoVo.setOrderVoList(null);
-        userInfoVo.setUserName("-1");
+        userInfoVo.setUserName("我是降级方法。。。。。");
         return userInfoVo;
     }
 

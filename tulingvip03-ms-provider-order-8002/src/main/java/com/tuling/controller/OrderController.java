@@ -32,8 +32,10 @@ public class OrderController {
         log.info("测试降级。。。。。。。");
 
         //超时降级
-        Thread.sleep(4000);
-
+//        Thread.sleep(4000);
+        if (userId == 2) {
+            throw new InterruptedException();
+        }
 
         List<OrderVo> list = new ArrayList<>();
         OrderVo orderVo = new OrderVo();

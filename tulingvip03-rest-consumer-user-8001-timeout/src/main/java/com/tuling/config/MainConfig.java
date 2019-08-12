@@ -15,8 +15,8 @@ public class MainConfig {
     public RestTemplate restTemplate() {
         //设置restTemplate的超时时间
         SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
-        requestFactory.setReadTimeout(2000);
-        requestFactory.setConnectTimeout(2000);
+        requestFactory.setReadTimeout(1);
+        requestFactory.setConnectTimeout(2);
 
         RestTemplate restTemplate = new RestTemplate(requestFactory);
         return restTemplate;
