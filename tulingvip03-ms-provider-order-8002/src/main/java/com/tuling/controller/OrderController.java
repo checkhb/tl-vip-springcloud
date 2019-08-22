@@ -31,11 +31,13 @@ public class OrderController {
     public List<OrderVo> queryOrdersByUserId(@PathVariable("userId") Integer userId) throws InterruptedException {
         log.info("测试降级。。。。。。。");
 
-        //超时降级
-//        Thread.sleep(4000);
+        //超时降级 -1超时跳闸
+        Thread.sleep(4000);
+        //2异常跳闸
         if (userId == 2) {
             throw new InterruptedException();
         }
+        //3宕机跳闸
 
         List<OrderVo> list = new ArrayList<>();
         OrderVo orderVo = new OrderVo();

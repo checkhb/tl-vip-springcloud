@@ -1,0 +1,37 @@
+package com.tuling.controller;
+
+public class DeadLockTest {
+    private static final Object lock1 = new Object();
+    private static final Object lock2= new Object();
+
+    public static void main(String[] args) {
+        new Thread(() -> {
+            synchronized (lock1){
+                System.out.println("thread1 begin");
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                synchronized (lock2){
+                    System.out.println("thread1 end");
+                }
+            }
+        }).start();
+
+        new Thread(() -> {
+                synchronized (lock2){
+                    System.out.println("thread2 begin");
+                    try {
+                        Thread.sleep(5000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    synchronized (lock1){
+                        System.out.println("thread2 end");
+                    }
+                }
+        }).start();
+        System.out.println("end..............");
+    }
+}
