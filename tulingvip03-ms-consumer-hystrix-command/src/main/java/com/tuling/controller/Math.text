@@ -1,0 +1,35 @@
+Compiled from "JvmDemo.java"
+public class com.tuling.controller.JvmDemo {
+  public com.tuling.controller.JvmDemo();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public int math();
+    Code:
+       0: iconst_1
+       1: istore_1
+       2: iconst_2
+       3: istore_2
+       4: iload_1
+       5: iload_2
+       6: imul
+       7: iconst_3
+       8: iadd
+       9: istore_3
+      10: iload_3
+      11: ireturn
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: new           #2                  // class com/tuling/controller/JvmDemo
+       3: dup
+       4: invokespecial #3                  // Method "<init>":()V
+       7: astore_1
+       8: getstatic     #4                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      11: aload_1
+      12: invokevirtual #5                  // Method math:()I
+      15: invokevirtual #6                  // Method java/io/PrintStream.println:(I)V
+      18: return
+}
